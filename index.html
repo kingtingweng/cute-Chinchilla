@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="婷的個人簡介 - 台南應用科技大學，摩羯座，喜愛聽音樂與騎車，分享超萌白龍貓！">
+    <title>1006 | 婷的個人簡介 · Ting's Space</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Starry Night Sky Canvas (Active in Dark Mode) -->
+    <canvas id="starry-sky" class="starry-sky-canvas" aria-hidden="true"></canvas>
+
+    <!-- Ambient Floating Glows -->
+    <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+
+    <div class="page-wrapper">
+        
+        <!-- Navigation Bar -->
+        <header class="top-nav">
+            <a href="#" class="brand">
+                <span class="brand-icon">✨</span>
+                <span>Ting's Space</span>
+            </a>
+            <div class="nav-actions">
+                <button type="button" id="space-like-nav-btn" class="space-like-pill" title="為 Ting's Space 按讚應援！" aria-label="Ting's Space 按讚指數">
+                    <span class="like-heart-icon">💖</span>
+                    <span class="like-text">按讚指數</span>
+                    <span class="like-counter-val" id="nav-like-count">1,314</span>
+                </button>
+                <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="切換深淺色主題">
+                    <span id="theme-icon">☀️</span>
+                    <span id="theme-text">柔和暖白</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Card (Profile Header) -->
+        <section class="hero-card" id="profile-hero">
+            <div class="avatar-container">
+                <div class="avatar-ring">
+                    <img src="chinch.jpg" alt="婷的個人頭像 - 萌萌龍貓" class="avatar-img">
+                </div>
+                <!-- Interactive Little Totoro Avatar Badge -->
+                <button type="button" class="mini-pet-badge" id="pet-trigger" title="點我摸摸小龍貓！" aria-label="互動小龍貓">
+                    <img src="tomcat.jpg" alt="小龍貓圖標">
+                </button>
+            </div>
+
+            <div class="hero-content">
+                <div class="badge-row">
+                    <span class="tag-badge tag-badge-primary">🌱 Student Profile</span>
+                    <span class="tag-badge tag-badge-capricorn">♑ 摩羯座 Capricorn</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span>個人簡介</span>
+                    <span class="hero-subtitle">/ 婷 (Ting)</span>
+                </h1>
+
+                <p class="hero-bio">
+                    歡迎來到我的個人小天地！目前就讀於<strong>台南應用科技大學</strong>。平時喜歡沉浸在音樂的旋律中，也熱愛騎著車迎風出發感受生活。這裡記錄了我的個人檔案與超療癒的毛茸茸龍貓夥伴！
+                </p>
+
+                <!-- Ting's Space Popularity & Like Index Box -->
+                <div class="space-popularity-box">
+                    <div class="popularity-info">
+                        <div class="popularity-title-row">
+                            <span class="popularity-label">💖 Ting's Space 按讚指數</span>
+                            <span class="popularity-tier" id="popularity-tier">🌟 人氣爆棚 · 萌寵達人</span>
+                        </div>
+                        <div class="popularity-progress-track" title="按讚熱度進度條">
+                            <div class="popularity-progress-fill" id="popularity-progress" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="space-like-main-btn" id="space-like-btn" title="點擊為 Ting's Space 送上小心心！">
+                        <span class="space-like-heart">💖</span>
+                        <span>按讚應援</span>
+                        <span class="space-like-number" id="main-like-count">1,314</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Profile Info Cards -->
+        <section class="info-section">
+            <h2 class="info-section-title">
+                <span>📋 基本資訊</span>
+            </h2>
+            <div class="info-cards-grid">
+                
+                <!-- Name Card -->
+                <article class="info-card">
+                    <div class="info-card-icon icon-pink">
+                        <span>👤</span>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">Name</span>
+                        <div class="info-card-value">婷 · Ting</div>
+                        <div class="info-tag-list">
+                            <span class="info-mini-tag">#溫柔慢熱</span>
+                            <span class="info-mini-tag">#真誠隨和</span>
+                            <span class="info-mini-tag">#細膩生活家</span>
+                        </div>
+                        <p class="info-card-desc">
+                            大家都叫我「婷」～個性真誠隨和，初次見面或許有些安靜靦腆，但熟識之後是個開朗健談、樂於傾聽與分享日常的朋友。喜歡用心感受生活中的微小確幸，相信平淡的日常中也藏著最溫暖的治癒力！
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Constellation Card -->
+                <article class="info-card">
+                    <div class="info-card-icon icon-purple">
+                        <span>⭐</span>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">Constellation</span>
+                        <div class="info-card-value">摩羯座 · Capricorn ♑</div>
+                        <div class="info-tag-list">
+                            <span class="info-mini-tag">#土象星座</span>
+                            <span class="info-mini-tag">#務實堅定</span>
+                            <span class="info-mini-tag">#外冷內熱</span>
+                        </div>
+                        <p class="info-card-desc">
+                            標準的摩羯特質——認真負責、做事踏實且自律。外表看似冷靜獨立，內心其實有一座充滿人情味的溫暖小宇宙；面對在乎的人十分溫柔護短，對喜愛的事物會默默耕耘、全力以赴，是身邊最安心可靠的夥伴。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Education Card -->
+                <article class="info-card">
+                    <div class="info-card-icon icon-blue">
+                        <span>🎓</span>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">Education</span>
+                        <div class="info-card-value">台南應用科技大學</div>
+                        <div class="info-tag-list">
+                            <span class="info-mini-tag">#南應大 TUT</span>
+                            <span class="info-mini-tag">#校園日常</span>
+                            <span class="info-mini-tag">#設計學習</span>
+                        </div>
+                        <p class="info-card-desc">
+                            Tainan University of Technology。在南應大充實度過每一天，享受台南豐富的文化底蘊、美食與微風，在課堂與創作實踐中不斷累積專業與成長。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobbies Card -->
+                <article class="info-card">
+                    <div class="info-card-icon icon-amber">
+                        <span>✨</span>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">Hobbies & Life</span>
+                        <div class="info-card-value">聽音樂、騎車</div>
+                        <div class="hobbies-pill-group">
+                            <span class="hobby-pill">🎧 聽音樂</span>
+                            <span class="hobby-pill">🛵 騎車吹風</span>
+                        </div>
+                        <p class="info-card-desc" style="margin-top: 0.45rem;">
+                            戴上耳機沉浸在動人旋律中放鬆心靈；也享受騎上車迎風前行的速度感，在城市的街道巷弄裡尋找專屬的生活靈感與自由。
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Interactive Life & Hobbies Widgets Grid -->
+        <section class="widgets-grid">
+            
+            <!-- Music Player Widget -->
+            <article class="widget-card" id="music-widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <span>🎵</span>
+                        <span>興趣探索 · 隨身聽</span>
+                    </h3>
+                    <div class="wave-bars" id="wave-bars">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+
+                <div class="music-player-inner">
+                    <div class="track-info">
+                        <div class="vinyl-disc" id="vinyl-disc">
+                            <div class="vinyl-center"></div>
+                        </div>
+                        <div class="track-meta">
+                            <div class="track-title">Little Bit Better 🎵</div>
+                            <div class="track-artist">Caleb Hearn & ROSIE</div>
+                            <div class="track-lyrics" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 3px; font-style: italic;">
+                                "Makes the hard days feel a little bit lighter..."
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-controls">
+                        <button type="button" class="play-toggle-btn" id="play-music-btn">
+                            <span id="play-icon">▶️</span>
+                            <span id="play-label">播放 Little Bit Better</span>
+                        </button>
+                        <a href="https://www.youtube.com/results?search_query=Caleb+Hearn+ROSIE+Little+Bit+Better" target="_blank" rel="noopener noreferrer" class="music-link-btn" title="在 YouTube 上聆聽完整原曲">
+                            <span>🎧 原曲 MV</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Scooter / Riding Widget -->
+            <article class="widget-card" id="riding-widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <span>🛵</span>
+                        <span>騎車兜風 · 出發尋找靈感</span>
+                    </h3>
+                    <span class="tag-badge tag-badge-primary">Free Ride</span>
+                </div>
+
+                <div class="riding-inner">
+                    <div class="riding-stats-row">
+                        <div class="riding-stat-item">
+                            <span class="riding-stat-number" id="riding-km">128 km</span>
+                            <span class="riding-stat-title">兜風里程</span>
+                        </div>
+                        <div class="riding-stat-item">
+                            <span class="riding-stat-number">台南 ↔ 高雄</span>
+                            <span class="riding-stat-title">探索路線</span>
+                        </div>
+                        <div class="riding-stat-item">
+                            <span class="riding-stat-number">100%</span>
+                            <span class="riding-stat-title">心情愉悅度</span>
+                        </div>
+                    </div>
+
+                    <div class="riding-track">
+                        <div class="riding-progress">
+                            <span class="riding-scooter-icon" id="scooter-icon" title="點擊催油門向前！">🛵</span>
+                        </div>
+                    </div>
+
+                    <p class="riding-quote">「戴上安全帽，聽著耳機裡的歌，道路與風聲就是最好的放鬆。」</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Mini Game: Totoro Acorn Catch (龍貓接堅果小遊戲) -->
+        <section class="game-section" id="totoro-game-section">
+            <div class="game-card">
+                <div class="game-header">
+                    <div>
+                        <div class="badge-row" style="margin-bottom: 0.4rem;">
+                            <span class="tag-badge tag-badge-primary">🎮 互動小遊戲</span>
+                            <span class="tag-badge" style="background: #fef3c7; color: #b45309; border: 1px solid rgba(245, 158, 11, 0.3);">✨ 30 秒挑戰</span>
+                        </div>
+                        <h2 class="info-section-title" style="margin-bottom: 0.25rem;">
+                            <span>🐾 龍貓接堅果大冒險</span>
+                        </h2>
+                        <p style="color: var(--text-muted); font-size: 0.92rem;">
+                            移動小龍貓，接住美味堅果 🌰、草莓 🍓 與幸運星 ⭐，避開刺刺烏雲 ⚡！
+                        </p>
+                    </div>
+
+                    <!-- Game HUD Stats -->
+                    <div class="game-hud">
+                        <div class="hud-item">
+                            <span class="hud-label">得分</span>
+                            <span class="hud-value" id="game-score">0</span>
+                        </div>
+                        <div class="hud-item">
+                            <span class="hud-label">倒數</span>
+                            <span class="hud-value" id="game-timer">30s</span>
+                        </div>
+                        <div class="hud-item">
+                            <span class="hud-label">最佳紀錄</span>
+                            <span class="hud-value" id="game-highscore">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Stage Canvas -->
+                <div class="game-stage-wrapper" id="game-stage">
+                    <canvas id="game-canvas"></canvas>
+                    
+                    <!-- Overlay Start / Game Over Screen -->
+                    <div class="game-overlay" id="game-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon" id="overlay-icon">🌰</div>
+                            <h3 class="overlay-title" id="overlay-title">龍貓接堅果大作戰</h3>
+                            <p class="overlay-desc" id="overlay-desc">
+                                用滑鼠、手指滑動或鍵盤方向鍵 (◀ ▶) 左右移動小龍貓，接住越多美食分數越高！
+                            </p>
+                            <button type="button" class="game-start-btn" id="game-start-btn">
+                                <span>▶️ 開始遊戲</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Touch Mobile Controls for Phones/Tablets -->
+                    <div class="mobile-touch-bar">
+                        <button type="button" class="touch-btn" id="btn-left">◀ 向左移動</button>
+                        <button type="button" class="touch-btn" id="btn-right">向右移動 ▶</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Totoro & Chinchilla Showcase Gallery -->
+        <section class="gallery-section">
+            <div class="section-header-box">
+                <div>
+                    <h2 class="info-section-title" style="margin-bottom: 0.25rem;">
+                        <span>🐾 萌寵小天地 · 龍貓特輯</span>
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">點擊圖片可放大欣賞高畫質萌照！</p>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                
+                <!-- Card 1: Chinchilla Photo -->
+                <article class="gallery-card">
+                    <div class="card-media-wrapper zoomable-img" data-caption="圓滾滾的雪白龍貓（絨鼠）萌照">
+                        <img src="chinch.jpg" alt="雪白龍貓照片">
+                        <div class="card-badge">✨ 萌度滿分</div>
+                        <div class="zoom-hint">🔍</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <span>雪白龍貓 (絨鼠)</span>
+                            <span style="font-size: 1.2rem;">🐹</span>
+                        </div>
+                        <p class="card-description">
+                            擁有極致蓬鬆柔軟的毛髮，圓滾滾的身形就像宮崎駿動畫裡的真實版龍貓，無辜的大眼睛看一眼心都融化了！
+                        </p>
+                        <div class="card-footer">
+                            <button type="button" class="like-button">
+                                <span class="heart-icon">💖</span>
+                                <span>按讚</span>
+                                <span class="like-count">520</span>
+                            </button>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">chinch.jpg</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Little Totoro Mascot -->
+                <article class="gallery-card" id="pet-easter-egg">
+                    <div class="card-media-wrapper zoomable-img" data-caption="純白可愛的吉卜力小龍貓插畫">
+                        <img src="tomcat.jpg" alt="白小龍貓插畫" style="background: #fafafa; object-fit: contain;">
+                        <div class="card-badge">🌿 療癒插畫</div>
+                        <div class="zoom-hint">🔍</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <span>純白小龍貓</span>
+                            <span style="font-size: 1.2rem;">🍃</span>
+                        </div>
+                        <p class="card-description">
+                            宮崎駿經典動畫《龍貓》中隱身在森林草叢裡的白色精靈小龍貓，充滿童趣與奇幻想像！（點擊可以摸摸它喔）
+                        </p>
+                        <div class="card-footer">
+                            <button type="button" class="like-button">
+                                <span class="heart-icon">⭐</span>
+                                <span>喜歡</span>
+                                <span class="like-count">368</span>
+                            </button>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">tomcat.jpg</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Feature Banner: ELLE Link (清新療癒風格) -->
+        <section class="elle-feature-banner">
+            <span class="elle-tag">🌿 推薦閱讀 · 萌寵專欄</span>
+            <h2 class="elle-title">
+                <span>萌度炸裂！真實版龍貓的療癒日常</span>
+                <span style="font-size: 1.5rem;">🍃</span>
+            </h2>
+            <p class="elle-desc">
+                探索世界上最治癒的毛茸茸生物！ELLE 精選專訪帶你認識這群圓滾滾、溫和可愛的雪白絨鼠，一起走進純粹美好的龍貓世界。
+            </p>
+            <div class="elle-actions">
+                <a href="https://www.elle.com/tw/life/fluffy/g29707110/chinchilla-totoro/" target="_blank" rel="noopener noreferrer" class="cta-button-primary">
+                    <span>📖 閱讀 ELLE 專題報導 (新分頁開啟)</span>
+                    <span>↗</span>
+                </a>
+                <a href="https://www.elle.com/tw/life/fluffy/g29707110/chinchilla-totoro/" class="cta-button-secondary">
+                    <span>本頁前往</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p class="footer-quote">「用心生活，記錄每一個美好而可愛的瞬間。」</p>
+            <p>© 2026 婷 (Ting) · 網頁設計作業 1006 · 台南應用科技大學</p>
+        </footer>
+
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="圖片放大預覽">
+        <div class="lightbox-content">
+            <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="關閉預覽">✕</button>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
